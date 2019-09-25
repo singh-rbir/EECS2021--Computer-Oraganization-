@@ -1,0 +1,20 @@
+@00  00000001  // array[0] 
+@04  00000003  // array[1] 
+@08  00000005  // array[2] 
+@0C  00000007  // array[3] 
+@10  00000009  // array[4] 
+@14  0000000B  // array[5] 
+@18  00000000  // null terminator 
+@20  00000000  // the sum 
+@24  00000000  // the or reduction 
+@28  00000f33  // add  t5, $0, $0    # t5 = index 
+@2C  00000433  // add  s0, $0, $0    # s0 = sum 
+@30  00000533  // add  a0, $0, $0    # a0 = or reduction 
+@34  000f2283  // lw   t0, 0x30($t5) # loop: t0 = array[t5] 
+@38  00028563  // beq  t0, $0, done  # if (t0 == 0) done
+@3C  00540433  // add s0, s0, t0
+@40  00556533  // or a0, a0, t0
+@44  004f0f13  // addi t5, t5, 4
+@48  ff7ff06F  // j loop
+@4C  02802023  // sw s0, 0x20(x0)
+@50  02a02223  // sw a0, 0x24(x0)

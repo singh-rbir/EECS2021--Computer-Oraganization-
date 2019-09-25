@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=ISO-8859-7">
+    <meta name="GENERATOR" content="Mozilla/4.75 [en] (X11; U; SunOS 5.7
+      sun4u) [Netscape]">
+    <title>EECS2021</title>
+  </head>
+  <body bgcolor="#FFFFFF">
+    <h1>Computer Organization: LabK02</h1>
+    <h2>Question</h2>
+    Write a Verilog program to implement and test a subtractor. The
+    program should have three modules. The first module, called
+    cfulladder implements a one bit subtractor with two 1-bit outputs, S
+    and Cout, and three one bit inputs A, B, Cin. You have to use always
+    keyword to implement this combinational circuit. The second module,
+    called sub4 implements a four bit subtractor by instantiating 4
+    cfulladder modules. It has the same inputs and outputs but now the
+    S, A, and B are four bits wide, while the rest are still one bit.
+    <p> The last module, called t_sub is a testbench. It instantiates
+      one sub4 module and tests it for several possible inputs. Using
+      the pre-lab as guide you define A and B as 4-bit registers and
+      initialize them to zero. Then, using a repeat loop you increment A
+      and B by 1 and 2 respectively and display the time, A, B, S and
+      Cout, in this order as decimals. You repeat the loop 7 times. You
+      have to have a 5 unit delay before every display instruction. All
+      modules should be in one file. </p>
+    <p> </p>
+    <h2>Coding Style</h2>
+    <p> Style is important in programming, so it is expected that you
+      have proper indentation, comments, short and meaningful
+      identifiers, and all things that define good style. Every file in
+      your program has to have a header identifying the author, course
+      and a short description, every module in every file has to have a
+      short header with the name and a short description of the module.
+      Keep your comments and descriptions short. You should follow the
+      conventions of Verilog, like indentation, etc. The modules for
+      this Lab are small so one to three comments per module is a good
+      guide.<br>
+    </p>
+  </body>
+</html>

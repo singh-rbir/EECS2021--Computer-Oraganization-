@@ -1,0 +1,52 @@
+LabD02: Stack, Procedures, and Recursion
+Assignment (secret question/problem): Below a character is either a letter or a digit.
+1.    Write a procedure ins that inserts a character in a string consisting of characters sorted in decreasing alphabetical order preserving the sorting.
+2.    Write a procedure del that deletes all digits from a string that consists of characters sorted in decreasing alphabetical order.
+3.    Write a recursive procedure inv that prints a string in an inverse order as per the following pseudo code:
+inv ( a0 ) {
+      if (a0 denotes a string of 1 character) {
+            print the character;
+      } else {
+            inv ( a0+1 )
+            print the first character of the string denoted by a0;
+      }
+}
+4.    Use the following main program for testing of your code:
+s0:   DC          "INPUT\n\0"
+s1:   DC          "INSERT\0"
+s2:   DC          "REMOVE\0"
+s3:   DC          "INVERSE\0"
+sm1:  DM          2     ;input string
+sm2:  DM          2     ;sorted string
+      ld          x30, s0(x0)
+      addi        x31, x0, sm1
+      ecall       x31, x30, 9 ;input a string
+      ld          x30, s1(x0)
+      ecall       x0, x30, 3 ;print "INSERT\0"
+      addi        a0, x0, sm2 ;destination string argument
+m1:   lb          a1, 0(x31) ;character to insert argument
+      addi        x31, x31, 1
+      beq         a1, x0, m2  ;end of the string?
+      jal         x1, ins
+      beq         x0, x0, m1
+m2:   addi        x5, x0, sm2
+      ecall       x0, x5, 4 ;print sm2
+      ld          x30, s2(x0)
+      ecall       x0, x30, 3 ;print "REMOVE\0"
+      addi        a0, x0, sm2 ;string argument
+      jal         x1, rem
+      addi        x5, x0, sm2
+      ecall       x0, x5, 4 ;print sm2
+      ld          x30, s3(x0)
+      ecall       x0, x30, 3 ;print "INVERSE\0"
+      addi        a0, x0, sm2 ;string argument 
+      jal         x1, inv
+      ebreak      x0, x0, 0
+rem:  ;insert your procedure code below
+      jalr        x0, 0(x1)   ;ret
+inv:  ;insert your procedure code below
+      jalr        x0, 0(x1)   ;ret
+ins:  ;insert your procedure code below
+      jalr        x0, 0(x1)
+ 
+submit 2021 LabD02 D02as01.asm

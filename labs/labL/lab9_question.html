@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=ISO-8859-7">
+    <meta name="GENERATOR" content="Mozilla/4.75 [en] (X11; U; SunOS 5.7
+      sun4u) [Netscape]">
+    <title>EECS2021</title>
+  </head>
+  <body bgcolor="#FFFFFF">
+    <h1>Computer Organization: LabL02</h1>
+    <h2>Question</h2>
+    <p> Write a Verilog program to implement and test a 4 bit ALU. You
+      will write at least two modules. The first is called ALU4 and has
+      two 4-bit data inputs, A and B. One control 3-bit input ctl, which
+      takes the values 000, 001, 010, 100 and 111, for ADD, AND, OR, SUB
+      and SLT (set less than) respectively. It has one 4-bit output Z.
+      You will probably need a 4 to 1 MUX like the one in the prelab and
+      an arithmetic unit like the yArith in the prelab. Note that the
+      first (MSB) of the control input is equal to 1 only for SUB and
+      SLT. You have to use the parameter facility of Verilog. </p>
+    <p> The last module, called t_ALU is a testbench. It instantiates
+      one ALU4 module and tests it for several possible inputs. Using
+      the pre-lab as guide you define A and B as 4-bit registers and
+      initialize them to dollar-random. Then, using a repeat loop
+      display time, A, B, and Z, in this order. You repeat the loop 10
+      times for each possible value of the control input and display the
+      value you expect like the prelab. You have to have a 5 unit delay
+      before every display instruction. All modules can be in one file
+      if you want. </p>
+    <p> </p>
+    <p> </p>
+    <h2>Coding Style</h2>
+    <p> Style is important in programming, so it is expected that you
+      have proper indentation, comments, short and meaningful
+      identifiers, and all things that define good style. Every file in
+      your program has to have a header identifying the author, course
+      and a short description, every module in every file has to have a
+      short header with the name, short description of the module. Keep
+      your comments and descriptions short. You should follow the
+      conventions of Verilog, like indentation, etc. The modules for
+      this Lab are small so one to three comments per module is a good
+      guide. </p>
+  </body>
+</html>
